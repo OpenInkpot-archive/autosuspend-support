@@ -1,0 +1,6 @@
+autosuspend-support (1.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Yauhen Kharuzhy <jekhor@gmail.com>  Tue, 07 Oct 2008 22:31:02 +0300
+
