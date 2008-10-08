@@ -41,13 +41,21 @@ install: build
 
 # Build architecture-independent files here.
 binary-indep: build install
-# We have nothing to do by default.
+	dh_testdir
+	dh_testroot
+	dh_installinit -i -r --no-start -- start 01 S . stop 01 0 6 .
+	dh_compress -i
+	dh_fixperms -i
+	dh_installdeb -i
+	dh_shlibdeps -i
+	dh_gencontrol -i
+	dh_md5sums -i
+	dh_builddeb -i
 
 # Build architecture-dependent files here.
 binary-arch: build install
 	dh_testdir
 	dh_testroot
-	dh_installinit -i -r --no-start -- start 01 S . stop 01 0 6 .
 	dh_link
 	dh_strip
 	dh_compress

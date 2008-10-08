@@ -6,7 +6,6 @@ Build-Depends: debhelper (>= 5)
 Standards-Version: 3.7.3
 
 Package: autosuspend-support
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Architecture: all
 Description: OI autosuspend support
  Support for OI autosuspend
