@@ -1,3 +1,9 @@
+autosuspend-support (1.1) asimov; urgency=low
+
+  * Fix initscript and symlinks to it
+
+ -- Yauhen Kharuzhy <jekhor@gmail.com>  Wed, 08 Oct 2008 14:24:50 +0000
+
 autosuspend-support (1.0) asimov; urgency=low
 
   * Initial release
