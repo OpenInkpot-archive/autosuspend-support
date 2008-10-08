@@ -1,5 +1,7 @@
 #! /bin/sh
 
+DESC="support for autosuspend"
+NAME="autosuspend-support"
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 
