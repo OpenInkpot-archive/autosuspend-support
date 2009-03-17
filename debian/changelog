@@ -1,3 +1,9 @@
+autosuspend-support (1.2) asimov; urgency=low
+
+  * First build for IPlinux-based OpenInkpot.
+
+ -- Mikhail Gusarov <dottedmag@dottedmag.net>  Wed, 18 Mar 2009 03:19:19 +0600
+
 autosuspend-support (1.1) asimov; urgency=low
 
   * Fix initscript and symlinks to it

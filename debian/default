@@ -1,2 +1,2 @@
-# in ms
-AUTOSUSPEND_TIMEOUT="1000"
+# In milliseconds. Set to empty value for keeping the current value.
+AUTOSUSPEND_TIMEOUT=1000

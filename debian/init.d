@@ -1,18 +1,21 @@
 #! /bin/sh
 
-DESC="support for autosuspend"
+DESC="autosuspend"
 NAME="autosuspend-support"
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
-
 [ -f /etc/default/autosuspend ] && . /etc/default/autosuspend
+
+set_timeout() {
+	if [ x"$AUTOSUSPEND_TIMEOUT" != x ]; then
+		echo $AUTOSUSPEND_TIMEOUT > /sys/power/autosuspend_timeout
+	fi
+}
 
 case "$1" in
 	start)
 		echo -n "Starting $DESC: "
-		if [ x"$AUTOSUSPEND_TIMEOUT" != x"" ]; then
-			echo $AUTOSUSPEND_TIMEOUT > /sys/power/autosuspend_timeout
-		fi
+        set_timeout
 		echo 1 > /sys/power/autosuspend
 		echo "$NAME."
 		;;
@@ -21,9 +24,12 @@ case "$1" in
 		echo 0 > /sys/power/autosuspend
 		echo "$NAME."
 		;;
+    force-reload)
+        echo -n "Reloading $DESC: "
+        set_timeout
+        echo "$NAME."
 	*)
-		N=/etc/init.d/$NAME
-		echo "Usage: $N {start|stop}" >&2
+		echo "Usage: /etc/init.d/$NAME {start|stop|force-reload}" >&2
 		exit 1
 	;;
 esac
