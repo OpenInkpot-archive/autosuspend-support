@@ -28,10 +28,11 @@ case "$1" in
         echo -n "Reloading $DESC: "
         set_timeout
         echo "$NAME."
+        ;;
 	*)
 		echo "Usage: /etc/init.d/$NAME {start|stop|force-reload}" >&2
 		exit 1
-	;;
+	    ;;
 esac
 
 exit 0
