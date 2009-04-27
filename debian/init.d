@@ -14,12 +14,20 @@ set_timeout() {
 	fi
 }
 
+init_val=1
+if [ -f /sys/class/power_supply/usb/online ]; then
+	usb_online=`cat /sys/class/power_supply/usb/online`
+	if [ $usb_online == 1 ]; then
+		init_val=0;
+	fi
+fi
+
 case "$1" in
 	start)
 		echo -n "Starting $DESC: "
         if [ -f $SYS_CTL ]; then
             set_timeout
-		    echo 1 > $SYS_CTL
+		    echo $init_val > $SYS_CTL
 		    echo ok.
         else
             echo "not supported by kernel."
