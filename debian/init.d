@@ -6,7 +6,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 SYS_CTL=/sys/power/autosuspend
 
-[ -f /etc/default/autosuspend ] && . /etc/default/autosuspend
+[ -f /etc/default/autosuspend-support ] && . /etc/default/autosuspend-support
 
 set_timeout() {
 	if [ x"$AUTOSUSPEND_TIMEOUT" != x ]; then
